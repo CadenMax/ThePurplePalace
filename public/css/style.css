@@ -1,15 +1,23 @@
 body{
-	background-color:#eeeeee;
-	font-size:75%;
+	background-color:#fffbfb;
+	font-size: 75%;
+	margin-left: 150px;
 }
 .mainBody {
-	font-family:serif;
+	font-family:'Times New Roman', Times, serif;
 	font-size:1.4em;
 	margin:auto;
 	width: 100%;
 	text-align:center;
 	position: relative;
 }
+
+#page-header {
+    padding: 10px 20px; /* Padding inside the header */
+    margin: 0; /* Remove default margins */
+    border-bottom: 2px solid #54428E; /* Border under the header */
+}
+
 p{
 	width:auto;
 	margin:auto;
@@ -32,7 +40,7 @@ sup{
 	margin-right: 2%;
 	border: 1px solid black;
 	padding:2%;
-	background-color:#ffffdd;
+	background-color:#E5D0CC;
 	vertical-align:top;
 }
 #foodDisplay{
@@ -42,7 +50,7 @@ sup{
 	margin-top:2%;
 	border: 1px solid black;
 	padding:2%;
-	background-color:#ffffdd;
+	background-color:#E5D0CC;
 	vertical-align:top;
 }
 h1 ,h2,h3 {
@@ -52,34 +60,51 @@ h1 ,h2,h3 {
 h1{
 	margin-top:0;
 }
-#header{
-	width:100%;
-	background-color:#d90606;
-	text-align:center;
-	top:0;
-	left:0;
-	padding-top:1%;
+
+
+
+#sidebar {
+    background-color: #54428E; /* Dark purple background */
+    width: 150px; /* Adjusted width for better alignment */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the start */
+    padding: 20px; /* Unified padding for simplicity */
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: white;
+    text-align: left; /* Align text to the left */
+    z-index: 1000;
 }
-#fbt{
-	width:75px;
-	border:0;
+
+#sidebar img {
+    width: 100%; /* Adjust based on preference */
+    margin: 0 auto 20px; /* Center logo and add space below */
+	filter: drop-shadow(4px 5px 0 black);
 }
-#headImage{
-	width:15vh;
-	border:0;
+
+#sidebar a {
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    padding: 10px;
+    display: block; /* Ensure links take up full width of sidebar */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+	font-size: large;
 }
-#navigation{
-	width: 100%;
-	background-color:black;
-	padding-bottom:1%;
-	padding-top:1%;
-	text-align: center;
-	position: -webkit-sticky;
-	position: sticky;
-    z-index: 100;
-	top:0;
-	left:0;
+
+#sidebar a:hover {
+    background-color: #372863; /* Darker shade for hover */
 }
+
+/* Optional: FontAwesome icons adjustment */
+.fa {
+    margin-right: 10px; /* Space between icon and text */
+}
+
+
 #versionMarker{
 	font-size:.75em;
 	position:absolute;
@@ -106,29 +131,14 @@ h1{
 	width:100%;
 	display:inline-block;
 }
-#boastBox{
-	font-family:sans-serif;
-	font-size:.8em;
-	line-height:125%;
-	display:inline-block;
-	border-top:3px solid black;
-	border-bottom:3px solid black;
-	width:85%;
-	padding:5px;
-	margin:20px;
-	background-color:#e0e5c1;
-}
 .outerBtn{
-	font-family: serif;
-	font-variant: small-caps;
-	font-weight: 1000;
-	font-size: 1.1em;
 	padding: 6px;
 	margin: .1vw;
 	margin-top: 1vh;
+	color: white;
+	background-color: #8963BA;
 }
 .innerBtn{
-	font-family:serif;
 	font-variant:small-caps;
 	font-weight: 1000;
 	border: none;
@@ -151,7 +161,8 @@ div.decisions{
 	display:inline;
 }
 button{cursor: pointer;}
-.innerBtn:hover {background:#eeeeee;}
+.innerBtn:hover {background:#8963BA;}
+
 #wideBox{
 	height:500px;
 	display:inline-block;
@@ -237,7 +248,7 @@ button{cursor: pointer;}
 	background-color: #f9f9f9; 
 	border-radius: 8px; 
 	text-align: left; 
-	width: auto;
+	margin-left: 5%;
 } 
 
 #potions-list {
