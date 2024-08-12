@@ -1,3 +1,16 @@
-# thecoppersanctum
-D&amp;D DM Tools and Resources
-Well, I barely know what I'm doing, but yeah... let's do this.
+# My D&D Website
+Personal project to create a website for my D&D pages.
+
+## What you will find in here
+Generators
+Characters
+Ideas
+Campaigns
+Items
+Spells
+Monsters
+Many More
+
+
+
+

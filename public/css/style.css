@@ -1,0 +1,305 @@
+body{
+	background-color:#eeeeee;
+	font-size:75%;
+}
+.mainBody {
+	font-family:serif;
+	font-size:1.4em;
+	margin:auto;
+	width: 100%;
+	text-align:center;
+	position: relative;
+}
+p{
+	width:auto;
+	margin:auto;
+	margin-top:1%;
+}
+sup{
+	font-size:.5em;
+}
+#descriptionText{
+	width:95%;
+	margin:auto;
+	margin-top:1%;
+	border: 1px solid black;
+	padding:2%;
+	background-color:white;
+}
+#drinksDisplay{
+	width:90%;
+	margin-left: 2%;
+	margin-right: 2%;
+	border: 1px solid black;
+	padding:2%;
+	background-color:#ffffdd;
+	vertical-align:top;
+}
+#foodDisplay{
+	width:90%;
+	margin-left: 2%;
+	margin-right: 2%;
+	margin-top:2%;
+	border: 1px solid black;
+	padding:2%;
+	background-color:#ffffdd;
+	vertical-align:top;
+}
+h1 ,h2,h3 {
+	font-variant:small-caps;
+	margin:0;
+}
+h1{
+	margin-top:0;
+}
+#header{
+	width:100%;
+	background-color:#d90606;
+	text-align:center;
+	top:0;
+	left:0;
+	padding-top:1%;
+}
+#fbt{
+	width:75px;
+	border:0;
+}
+#headImage{
+	width:15vh;
+	border:0;
+}
+#navigation{
+	width: 100%;
+	background-color:black;
+	padding-bottom:1%;
+	padding-top:1%;
+	text-align: center;
+	position: -webkit-sticky;
+	position: sticky;
+    z-index: 100;
+	top:0;
+	left:0;
+}
+#versionMarker{
+	font-size:.75em;
+	position:absolute;
+	top:15px;
+	left:15px;
+}
+#disclaimer{
+	font-variant:small-caps;
+	font-weight:1000;
+	font-size:.7em;
+	width:100%;
+}
+.adventureBox{
+	width:90%;
+	display:inline-block;
+	vertical-align:top;
+	margin-bottom:20px;
+}
+.verticalSpacer{
+	margin-top:1em;
+}
+.spacer{
+	margin-top:1em;
+	width:100%;
+	display:inline-block;
+}
+#boastBox{
+	font-family:sans-serif;
+	font-size:.8em;
+	line-height:125%;
+	display:inline-block;
+	border-top:3px solid black;
+	border-bottom:3px solid black;
+	width:85%;
+	padding:5px;
+	margin:20px;
+	background-color:#e0e5c1;
+}
+.outerBtn{
+	font-family: serif;
+	font-variant: small-caps;
+	font-weight: 1000;
+	font-size: 1.1em;
+	padding: 6px;
+	margin: .1vw;
+	margin-top: 1vh;
+}
+.innerBtn{
+	font-family:serif;
+	font-variant:small-caps;
+	font-weight: 1000;
+	border: none;
+	background-color:inherit;
+	font-size:inherit;
+	display:inline-block;
+}
+div.s{
+	line-height:90%;
+	font-size:.8em;
+	font-style:italic;
+}
+div.decisions{
+	text-align:left;
+	width:49%;
+	display:inline-block;
+	vertical-align:top;
+}
+#oddDecision{
+	display:inline;
+}
+button{cursor: pointer;}
+.innerBtn:hover {background:#eeeeee;}
+#wideBox{
+	height:500px;
+	display:inline-block;
+}
+#navButton{
+	width:30%;
+	border:0;
+	margin-left:1%;
+	margin-right:1%;
+}
+
+.potion-description {
+	margin-top: 20px;
+	border: 1px solid #ddd;
+	background-color: #fff;
+	border-radius: 8px;
+	width: 100%;
+	text-align: center;
+}
+
+.image-prompt {
+	margin-top: 20px;
+	padding: 20px;
+	border: 1px solid #ddd;
+	background-color: #fff;
+	border-radius: 8px;
+	text-align: center;
+	width: auto;
+}
+.hidden {
+	display: none;
+}
+
+#generated-image {
+	max-width: 100%;
+	max-height: 500px;
+	width: auto;
+	height: auto;
+	display: none;
+	margin: 20px auto 0 auto;
+}
+
+#generated-image.loaded {
+    display: block; /* Show the image when it's loaded */
+}
+
+#generated-image::before {
+    content: attr(alt);
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+}
+
+#generated-image:hover::before {
+    display: block;
+}
+
+.saved-potion {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+	width: auto;
+}
+
+.saved-potion img {
+    max-width: 20%;
+    height: auto;
+    margin-top: 10px;
+}
+
+.saved-potions{
+	cursor: pointer; 
+	padding: 10px; 
+	border: 1px solid #ddd; 
+	background-color: #f9f9f9; 
+	border-radius: 8px; 
+	text-align: left; 
+	width: auto;
+} 
+
+#potions-list {
+	list-style-type: none;
+	padding: 0;
+}
+
+.saved-potions-description {
+	margin-left: 0px;
+	padding: 0%;
+}
+
+.spinner {
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+@media screen and (min-width: 1200px){
+	div.decisions{
+		width:19%;
+	}
+	#oddDecision{
+		display:inline-block;
+	}
+	.mainBody{
+		font-size:1.6em;
+		width:90%;
+	}
+	.spacer{
+		width: 10%;
+	}
+	#boastBox{
+		width:35%;
+	}
+	#drinksDisplay{
+		width:40%;
+	}
+	#foodDisplay{
+		width:40%;
+		margin-top:0;
+	}
+	button {
+		font-size: 1.2em;
+	}
+	#headImage{
+		width:150px;
+	}
+	#navButton{
+		width:200px;
+	}
+	.adventureBox{
+		width:35%;
+	}
+}

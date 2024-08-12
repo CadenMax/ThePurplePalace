@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>My D&D Site</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../public/css/style.css">
+    <link rel="icon" href="../public/assets/favicon.ico">
+</head>
+
+<body>
+    <div id="navigation">
+        <a href="taverns.html"><img src='../public/assets/tavernsButton.jpg' id="navButton" alt="Taverns"></a><a
+            href="travelers.html"><img src='../public/assets/travelersButton.jpg' id="navButton" alt="Taverns"></a><a
+            href="adventures.html"><img src='../public/assets/adventureButton.jpg' id="navButton"
+                alt="Adventures"></a><a href="potions.html"><img src='../public/assets/potionsButton.jpg' id="navButton"
+                alt="Potions"></a>
+    </div>
+
+    <div class="mainBody">
+        <h1>Random Potion Generator</h1>
+        <button class="outerBtn" onclick="generatePotion()">Generate Potion</button>
+        <button class="outerBtn" onclick="showImagePrompt()">Show Image Prompt</button>
+        <button id="save-potion" class="hidden outerBtn" onclick="savePotion()">Save Potion</button>
+        <div class="potion-description" id="potion-description">
+        </div>
+        <div class="image-prompt hidden" id="image-prompt">
+        </div>
+        <button class="hidden outerBtn" id="generate-image" onclick="generateImage()">Generate Image</button>
+        <div id="loading-spinner" class="hidden">
+            <div class="spinner"></div>
+        </div>
+        <img alt="Generated Image" id="generated-image" class="hidden" />
+    </div>
+
+    <div class="saved-potions hidden" id="saved-potions">
+        <h2 onclick="toggleSavedPotions()">Saved Potions ▼</h2>
+        <ul id="potions-list" class=""></ul>
+    </div>
+
+
+    <script src="../public/js/potions.js"></script>
+</body>
+
+</html>
