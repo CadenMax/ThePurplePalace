@@ -3,11 +3,13 @@
 
 <head>
     <meta charset="utf-8">
-    <title>My D&D Site</title>
+    <title>The Purple Palace</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../public/css/style.css">
     <link rel="icon" href="../public/assets/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script src="../public/js/main.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script> <!-- PapaParse -->
 
 </head>
 
@@ -19,16 +21,52 @@
         <a href="travelers.html"><i class="fa fa-users"></i> Travelers</a>
         <a href="loot.html"><i class="fa fa-gem"></i> Loot</a>
         <a href="potions.html"><i class="fa fa-flask"></i> Potions</a>
+        <!-- Dark Mode Slider -->
+        <div class="dark-mode-slider">
+            <input type="checkbox" id="dark-mode-toggle" onclick="toggleDarkMode()">
+            <label for="dark-mode-toggle"></label>
+        </div>
     </div>
 
     <div class="mainBody">
-        
         <h1 id="page-header">Random Loot Generator</h1>
+        <div id="filters">
+            <div>
+                <input type="radio" id="party-level-filter" name="filter-type" value="party-level" checked>
+                <label for="party-level-filter">Filter by Party Level</label><br>
+                <label for="party-level">Select Party Level (1-20):</label>
+                <input type="number" id="party-level" min="1" max="20" value="1">    
+            </div>
+            <div>
+                <input type="radio" id="wealth-level-filter" name="filter-type" value="wealth-level">
+                <label for="wealth-level-filter">Filter by Wealth Level</label><br>
+                <label for="wealth-level">Select Wealth Level:</label>
+                <select id="wealth-level">
+                    <option value="poor">Poor (5 silver pieces or less)</option>
+                    <option value="average">Average (10 gold pieces or less)</option>
+                    <option value="wealthy">Wealthy (200 gold pieces or less)</option>
+                    <option value="epic">Epic (2000 gold pieces or less)</option>
+                    <option value="legendary">Legendary (10 gold pieces or more)</option>
+                </select>    
+            </div>
+            <div>
+                <input type="radio" id="no-filter" name="filter-type" value="no-filter">
+                <label for="no-filter">No Filter (Default to 10 items)</label><br>
+            </div>
+            <div>
+                <input type="checkbox" id="item-count-filter" name="filter-type" value="item-count">
+                <label for="item-count-filter">Use Custom Item Count</label><br>
+                <label for="item-count">Number of Items to Generate:</label>
+                <input type="number" id="item-count" min="1" value="5">
+            </div>
+        </div>
 
-        <h2>Loot Generator</h2>
+        <button class="outerBtn" onclick="generateLoot()">Generate Loot</button>
 
+        <div id="loot-display"></div>
     </div>
 
+    <script src="../public/js/loot.js"></script>
 </body>
 
 </html>

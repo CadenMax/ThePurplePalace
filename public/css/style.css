@@ -9,8 +9,8 @@ body{
 .mainBody {
 	font-family:'Times New Roman', Times, serif;
 	font-size:1.4em;
-	margin:auto;
-	width: 100%;
+	margin: auto;
+	width: 90%;
 	text-align:center;
 	position: relative;
 }
@@ -34,6 +34,7 @@ sup{
 	margin:auto;
 	margin-top:1%;
 	border: 1px solid black;
+	border-radius: 8px;
 	padding:2%;
 	background-color:white;
 }
@@ -63,8 +64,6 @@ h1 ,h2,h3 {
 h1{
 	margin-top:0;
 }
-
-
 
 #sidebar {
     background-color: #54428E; /* Dark purple background */
@@ -102,33 +101,16 @@ h1{
     background-color: #372863; /* Darker shade for hover */
 }
 
+
 /* Optional: FontAwesome icons adjustment */
 .fa {
     margin-right: 10px; /* Space between icon and text */
 }
 
-
-#versionMarker{
-	font-size:.75em;
-	position:absolute;
-	top:15px;
-	left:15px;
-}
-#disclaimer{
-	font-variant:small-caps;
-	font-weight:1000;
-	font-size:.7em;
-	width:100%;
-}
-.adventureBox{
-	width:90%;
-	display:inline-block;
-	vertical-align:top;
-	margin-bottom:20px;
-}
 .verticalSpacer{
 	margin-top:1em;
 }
+
 .spacer{
 	margin-top:1em;
 	width:100%;
@@ -154,12 +136,15 @@ div.s{
 	font-size:.8em;
 	font-style:italic;
 }
-div.decisions{
-	text-align:left;
-	width:49%;
-	display:inline-block;
-	vertical-align:top;
+
+#decisionsArea{
+	display:flex;
+	width:100%;
+	flex-direction: row;
+	justify-content: space-around;
+
 }
+
 #oddDecision{
 	display:inline;
 }
@@ -170,15 +155,10 @@ button{cursor: pointer;}
 	height:500px;
 	display:inline-block;
 }
-#navButton{
-	width:30%;
-	border:0;
-	margin-left:1%;
-	margin-right:1%;
-}
 
 .potion-description {
 	margin-top: 20px;
+	margin-bottom: 20px;
 	border: 1px solid #ddd;
 	background-color: #fff;
 	border-radius: 8px;
@@ -248,7 +228,7 @@ button{cursor: pointer;}
 	cursor: pointer; 
 	padding: 10px; 
 	border: 1px solid #ddd; 
-	background-color: #f9f9f9; 
+	background-color: #fff; 
 	border-radius: 8px; 
 	text-align: left; 
 	margin-left: 5%;
@@ -274,46 +254,289 @@ button{cursor: pointer;}
     margin: 20px auto;
 }
 
+.loot-description{
+	margin-top: 5px;
+	margin-bottom: 20px;
+	border: 1px solid #000000;
+	background-color: #fff;
+	border-radius: 8px;
+	width: auto;
+	text-align: left;
+	padding: 20px;
+}
+
+.loot-description table{
+	width: 100%;
+	table {
+		width: 100%;
+		border-collapse: collapse;
+	}
+
+	th, td {
+		padding: 8px;
+		text-align: left;
+		border-bottom: 1px solid #ddd;
+	}
+
+	th {
+		background-color: #f2f2f2;
+		font-weight: bold;
+	}
+
+	tr:hover {
+		background-color: #f5f5f5;
+	}
+	
+}
+
+#filters{
+	display:flex;
+	flex-direction: row;
+	justify-content: space-around;
+	margin-top: 50px;
+}
+
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
 
+/* Dark Mode */
+.dark-mode {
+	background-color: #333;
+	color: #fff;
+}
 
-@media screen and (min-width: 1200px){
-	div.decisions{
-		width:19%;
+.dark-mode #sidebar {
+	background-color: #451353;
+}
+
+.dark-mode #sidebar a {
+	color: #fff;
+}
+
+.dark-mode #sidebar a:hover {
+	background-color: #7c0089;
+}
+
+.dark-mode .adventureBox {
+	background-color: #444;
+}
+
+.dark-mode .adventureBox h2 {
+	color: #fff;
+}
+
+.dark-mode .adventureBox p {
+	color: #fff;
+}
+
+.dark-mode .adventureBox .s {
+	color: #fff;
+}
+
+.dark-mode .innerBtn {
+	color: #fff;
+}
+
+.dark-mode .innerBtn:hover {
+	background-color: #5f3497;
+}
+
+.dark-mode .outerBtn {
+	background-color: #5f3497;
+}
+
+.dark-mode .potion-description {
+	background-color: #444;
+}
+
+.dark-mode .image-prompt {
+	background-color: #444;
+}
+
+.dark-mode .saved-potion {
+	background-color: #444;
+}
+
+.dark-mode .saved-potion img {
+	filter: invert(1);
+}
+
+.dark-mode .saved-potions {
+	background-color: #444;
+}
+
+.dark-mode .saved-potions-description {
+	color: #fff;
+}
+
+.dark-mode-slider {
+    position: relative;
+    width: 50px; /* Width of the slider */
+    height: 24px; /* Height of the slider */
+    margin-top: 20px; /* Spacing above the slider */
+}
+
+.dark-mode-slider input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.dark-mode-slider label {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #8963BA; /* Background color of the slider */
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.dark-mode-slider label:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+.dark-mode-slider input:checked + label {
+    background-color: #372863; /* Darker shade when toggled */
+}
+
+.dark-mode-slider input:checked + label:before {
+    transform: translateX(26px); /* Moves the slider knob */
+}
+
+.dark-mode .spinner {
+	border-top: 8px solid #3498db; /* Blue */
+}
+
+.dark-mode #descriptionText {
+	background-color: #444;
+	color: #fff;
+	border-color: #ffffff;
+}
+
+.dark-mode .loot-description {
+	background-color: #444;
+	color: #fff;
+	border-color: #ffffff;
+}
+
+.dark-mode .loot-description table {
+	background-color: #444;
+	color: #fff;
+	border-color: #ffffff;
+	th{
+		background-color: #3b3b3b;
+		color: #fff;
 	}
-	#oddDecision{
-		display:inline-block;
+	tr:hover{
+		background-color: #3b3b3b;
 	}
-	.mainBody{
-		font-size:1.6em;
-		width:90%;
+}
+
+/* Dynamic Display */
+@media screen and (max-width: 768px) and (min-width: 320px) {
+	body {
+		font-size: 100%;
+		margin-left: 0px;
+		margin-top: 0px;
 	}
-	.spacer{
-		width: 10%;
+
+	#sidebar {
+		width: 100%;
+		height: auto;
+		position: relative;
+		text-align: center;
+		margin: 0px;
 	}
-	#boastBox{
-		width:35%;
+
+	#sidebar img {
+		width: 50%;
+		margin: 0 auto 20px;
 	}
-	#drinksDisplay{
-		width:40%;
+
+	#sidebar a {
+		padding: 10px 0;
 	}
-	#foodDisplay{
-		width:40%;
-		margin-top:0;
+
+	#sidebar a:hover {
+		background-color: #372863;
 	}
-	button {
-		font-size: 1.2em;
+
+	#page-header {
+		padding: 10px 0;
 	}
-	#headImage{
-		width:150px;
+
+	#drinksDisplay {
+		width: 100%;
 	}
-	#navButton{
-		width:200px;
+
+	#foodDisplay {
+		width: 100%;
 	}
-	.adventureBox{
-		width:35%;
+
+	.adventureBox {
+		width: 100%;
 	}
+
+	.adventureBox h2 {
+		font-size: 1.5em;
+	}
+
+	.adventureBox p {
+		font-size: 1em;
+	}
+
+	.adventureBox .s {
+		font-size: 0.8em;
+	}
+
+	.adventureBox .innerBtn {
+		font-size: 1em;
+	}
+
+	.adventureBox .innerBtn:hover {
+		background-color: #8963BA;
+	}
+
+	.potion-description {
+		margin-top: 20px;
+		width: 100%;
+		padding: 10px;
+	}
+
+	.image-prompt {
+		margin-top: 20px;
+	}
+
+	.saved-potion {
+		margin-bottom: 10px;
+		margin-right: 10px;
+	}
+
+	.saved-potion img {
+		max-width: 20%;
+		margin-top: 10px;
+		
+	}
+
+	.saved-potions {
+		margin-left: 10px;
+	}
+
+	.spinner {
+		margin: 20px auto;
+	}
+
 }
