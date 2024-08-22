@@ -232,6 +232,7 @@ button{cursor: pointer;}
 	border-radius: 8px; 
 	text-align: left; 
 	margin-left: 5%;
+	margin-top: 10px;
 } 
 
 #potions-list {
@@ -246,7 +247,7 @@ button{cursor: pointer;}
 
 .spinner {
     border: 8px solid #f3f3f3; /* Light grey */
-    border-top: 8px solid #3498db; /* Blue */
+    border-top: 8px solid #5f3497; /* Blue */
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -371,53 +372,90 @@ button{cursor: pointer;}
 	color: #fff;
 }
 
+/* Slider container */
 .dark-mode-slider {
     position: relative;
-    width: 50px; /* Width of the slider */
-    height: 24px; /* Height of the slider */
-    margin-top: 20px; /* Spacing above the slider */
-}
-
-.dark-mode-slider input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.dark-mode-slider label {
-    position: absolute;
+    width: 60px;
+    height: 30px;
+    background-color: #8A2BE2;
+    border-radius: 30px;
+    display: inline-block;
     cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #8963BA; /* Background color of the slider */
-    transition: .4s;
-    border-radius: 34px;
+	margin-top: 10px;
 }
 
-.dark-mode-slider label:before {
+
+/* Hide the checkbox */
+#dark-mode-toggle {
     position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Hide the checkbox but keep it clickable */
+    cursor: pointer;
+    z-index: 2; /* Ensure it sits above other elements */
+}
+
+.slider-label {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    background-color: inherit;
+    cursor: pointer;
+    z-index: 1; /* Ensure it's beneath the checkbox */
+}
+
+/* Slider handle */
+.slider-label::before {
     content: "";
-    height: 18px;
-    width: 18px;
-    left: 3px;
-    bottom: 3px;
-    background-color: white;
-    transition: .4s;
+    position: absolute;
+    width: 26px;
+    height: 26px;
     border-radius: 50%;
+    background-color: white;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s ease;
 }
 
-.dark-mode-slider input:checked + label {
-    background-color: #372863; /* Darker shade when toggled */
+/* Sun icon */
+.sun-icon {
+    position: absolute;
+    left: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #8A2BE2; /* Sun color (gold) */
+    transition: opacity 0.3s ease;
 }
 
-.dark-mode-slider input:checked + label:before {
-    transform: translateX(26px); /* Moves the slider knob */
+/* Moon icon */
+.moon-icon {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #8A2BE2; /* Moon color (purple) */
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+/* When the toggle is checked (dark mode active) */
+#dark-mode-toggle:checked + .slider-label::before {
+    transform: translateX(30px); /* Move the slider handle */
+}
+
+#dark-mode-toggle:checked + .slider-label .sun-icon {
+    opacity: 0; /* Hide the sun */
+}
+
+#dark-mode-toggle:checked + .slider-label .moon-icon {
+    opacity: 1; /* Show the moon */
 }
 
 .dark-mode .spinner {
-	border-top: 8px solid #3498db; /* Blue */
+	border-top: 8px solid #54428E; /* Blue */
 }
 
 .dark-mode #descriptionText {

@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Toggle dark mode and update localStorage
     darkModeToggle.addEventListener('change', () => {
         body.classList.toggle('dark-mode');
-
         if (body.classList.contains('dark-mode')) {
             localStorage.setItem('dark-mode', 'enabled');
         } else {

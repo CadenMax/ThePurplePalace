@@ -496,7 +496,9 @@ function generatePotion() {
     document.getElementById('potion-description').innerHTML = potionDescription;
     document.getElementById('image-prompt').classList.add('hidden');
     document.getElementById('generate-image').classList.add('hidden');
-    document.getElementById('generated-image').classList.add('hidden');
+    const generatedImage = document.getElementById('generated-image');
+    generatedImage.src = ""; // Clear the image source
+    generatedImage.classList.add('hidden'); // Hide the image element
     document.getElementById('save-potion').classList.remove('hidden');
 }
 

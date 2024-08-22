@@ -1,4 +1,4 @@
-# MThe Purple Palace
+# The Purple Palace
 Personal project to create a website for my D&D pages.
 
 ## What you will find in here
