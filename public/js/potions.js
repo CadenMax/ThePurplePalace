@@ -518,7 +518,7 @@ The ${title.toLowerCase()}'s label is ${label.toLowerCase()}
 }
 
 async function generateImage() {
-    const apiKey = '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';
+    const apiKey = '';
     const promptText = document.querySelector('#image-prompt pre').innerText;
 
     // Show loading spinner
